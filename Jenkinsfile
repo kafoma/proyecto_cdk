@@ -8,9 +8,22 @@ pipeline {
       }
     }
 
-    stage('Instalación') {
+    stage('InstalaciÃ³n') {
       steps {
         sh 'gcc -v'
+      }
+    }
+
+    stage('Compilacion') {
+      steps {
+        sh '''gcc programa.c -o mi_programa
+./mi_programa'''
+      }
+    }
+
+    stage('Limpieza') {
+      steps {
+        sh 'rm mi_programa'
       }
     }
 
