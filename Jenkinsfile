@@ -10,7 +10,7 @@ pipeline {
 
     stage('Instalación') {
       steps {
-        sh 'gcc -v'
+        sh 'cat versionImage | xargs ./scripts/build.sh'
       }
     }
 
