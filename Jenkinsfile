@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('Inicio') {
       steps {
-        sh 'env'
+        sh '''env
+docker -v'''
         echo 'Inicializando'
       }
     }
@@ -11,19 +12,6 @@ pipeline {
     stage('Instalación') {
       steps {
         sh 'cat versionImage | xargs ./scripts/build.sh'
-      }
-    }
-
-    stage('Compilacion') {
-      steps {
-        sh '''gcc programa.c -o mi_programa
-./mi_programa'''
-      }
-    }
-
-    stage('Limpieza') {
-      steps {
-        sh 'rm mi_programa'
       }
     }
 
