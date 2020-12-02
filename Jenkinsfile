@@ -15,5 +15,11 @@ docker -v'''
       }
     }
 
+    stage('Run test') {
+      steps {
+        sh 'docker run -itd --name proyapi --rm -p 5000:5000 rogermz/proyectoapi:1.1'
+      }
+    }
+
   }
 }
